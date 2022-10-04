@@ -1,0 +1,110 @@
+<html>
+<body class="body">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="evaluanos.css" media="screen" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <header id="header">
+                        <nav class="menu">
+
+                                        <div class="logo-box">
+                                            <h1><a href="#">DULOCK</a></h1>
+                                        <span class="btn-menu"><i class="fas fa-bars"></i></span>
+                                        </div>
+                                
+                                        <div class="list-container">
+                                            <ul class="lists">
+                                                <li><a href= "dulock.html" >INICIO</a></li>
+                                                <li><a href= "mision.html">MISIÓN</a></li>
+                                                <li><a href= "productos.html">PRODUCTOS</a></li>
+                                                <li><a href= "galeria.html">GALERÍA</a></li>
+                                                <li><a href= "evaluanos.html" class="activo">EVALÚANOS</a></li>
+                                                <li><a href= "contactos.html">CONTACTOS</a></li>
+                                            </ul>
+                                
+                                        </div>
+                                
+                                    </nav>
+                     </header>
+        <header>
+            <script>
+            
+            var nombre = [];
+
+function evaluacion1(){ 
+    var nombre1= document.getElementById("nom").value*1;
+    var nombre2= document.getElementById("nom2").value*1;
+    var nombre3= document.getElementById("nom3").value*1;
+    var nombre4= document.getElementById("nom4").value*1;
+    var nombre5= document.getElementById("nom5").value*1;
+
+
+    if (nombre1 == "", nombre2 == "", nombre3 == "", nombre4 == "", nombre5 == ""){
+        alert ("Debe llenar todos los campos")
+    }
+    else{
+        nombre.push(nombre1);
+    alert("Muchas gracias por su tiempo!");
+    document.getElementById("nom").value="";
+    }
+
+    var calFinal= (nombre1+ nombre2+ nombre3 + nombre4 + nombre5)*1 ;
+    if (calFinal ==25){
+        document.getElementById("answerBox").innerHTML= "Nos da gusto tener una buena evaluación, el total fue:" + calFinal;
+    }
+    else{
+        document.getElementById("answerBox").innerHTML= "Intentaremos mejorar, el total fue:" + calFinal;
+    
+    }
+
+}
+
+         </script>
+         
+    </header>
+ 
+
+
+<div>  <br><br><br><br><br><br>
+
+<h3 style="color: white">Califica esta tienda con números del 1 al 5, siendo 5 el más alto.</h3>
+
+<form action="#" target="" method="get" name="formDatosPersonales">
+
+	<label for="nombre">Calidad de productos:</label> <br><br>
+    <input type="number" name="nombre" id="nom" placeholder="Número del 1-5"/>
+    <br><br><br>
+
+    <label for="apellidos">Calidad de servicios:</label><br><br>
+    <input type="number" name="nombre" id="nom2" placeholder="Número del 1-5"/>
+ 
+    <br><br><br>
+
+	<label for="email" >Tiempo de respuesta:</label><br><br>
+    <input type="number" name="nombre" id="nom3" placeholder="Número del 1-5"/>
+    
+    
+    <br><br><br>
+
+    <label for="asunto">Atención del personal:</label><br><br>
+    <input type="number" name="nombre" id="nom4" placeholder="Número del 1-5"/>
+    
+	<br><br><br>
+
+	<label for="mensaje">Instalaciones:</label><br><br>
+    <input type="number" name="nombre" id="nom5" placeholder="Número del 1-5"/>
+    
+	<br><br>
+	<input class="boton" type="button" name="enviar" value="EVALUAR" onClick= "evaluacion1()"/>
+</form>
+</div>
+
+<br><br>
+<aside class="answers">
+    <label>Total de puntos:</label>
+    <div id="answerBox"></div>
+</aside>
+
+</script></div><div class="n"><div class="n"> <a href="#" title="Ir arriba"><img alt="Ir arriba" border="0" src="imagenes/principal.jpg" style=position:fixed;bottom:0;right:0;/></a> </div>
+
+</body>
+</html>

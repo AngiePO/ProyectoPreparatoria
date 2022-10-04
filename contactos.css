@@ -1,0 +1,195 @@
+.body{
+    background:#272525;
+    font-family: 'Montserrat', sans-serif;
+ }
+
+/**BARRA**/
+
+ #header{
+  position: relative;
+  width: 100%;
+}
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 87px;
+  background: rgb(37, 37, 37);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+.menu .logo-box{
+  margin-left: 20px;
+}
+
+.menu .logo-box h1 a{
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 400;
+  color: white;
+}
+
+.menu .list-container{
+  margin-right: 20px;
+}
+
+.menu .list-container .lists{
+  display: flex;
+}
+
+.menu .list-container .lists li{
+  list-style: none;
+}
+
+.menu .list-container .lists li a{
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 8px;
+  color: white;
+  border-radius: 24px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.menu .list-container .lists li a.activo{
+  background: blue;
+  color: white;
+}
+
+.menu .list-container .lists li a:hover{
+  background: blue;
+  color: white;
+}
+.btn-menu > .fa-bars{
+  display: none;
+} 
+
+/**/
+
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  .formulario {
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .formulario__titulo {
+    text-align: center;
+    margin-top: 0;
+    color: rgba(0,0,0,0.7);
+  }
+  .formulario__input, .formulario__label, .formulario__submit {
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+  }
+  .formulario__input {
+    padding: 20px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+  }
+  .formulario__input:focus {
+    outline: 1px solid rgba(0,0,0,0.7);
+  }
+  .formulario__input:focus + .formulario__label{
+    margin-top: -135px;
+  }
+  .formulario__label {
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -85px;
+    z-index: -20;
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
+  }
+  .formulario__submit {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+  }
+  .fijar {
+    margin-top: -135px;
+  }
+
+
+  /**CONTACTOS**/
+
+.contactos{
+     width: 100%;
+     margin-top:120px;
+  }
+
+.contactos .contactos-box{
+    width: 90%;
+    margin: 80px auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+.contactos .contactos-box .card-contactos{
+  width: 45%;
+  margin: 20px;
+}
+
+.contactos .contactos-box .card-contactos .card-img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactos .contactos-box .card-contactos .card-img img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer; 
+}
+
+.contactos .contactos-box .card-contactos .contactos-text{
+  width: 100%;
+  border: 2px solid var(--red);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.contactos .contactos-box .card-contactos .contactos-text h4{
+  color: white;
+  font-weight: normal;
+  font-size: 27px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contactos .contactos-box .card-contactos .contactos-text p{
+  font-size: 19px;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+}
+
+
+
+
+

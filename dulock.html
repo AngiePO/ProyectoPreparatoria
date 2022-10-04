@@ -1,0 +1,122 @@
+<html>
+  
+<script>
+
+var nombre = [];
+
+		function contraseña1(){ 
+            var nombre1= document.getElementById("nom").value;
+            if (nombre1 == ""){
+                alert ("Debe llenar todos los campos")
+            }
+            else{
+                nombre.push(nombre1);
+            alert("Haz iniciado sesión. Bienvenido!");
+            document.getElementById("nom").value="";
+            }
+        }
+
+
+</script>
+
+
+
+<body class="body">
+        <link rel="stylesheet" type="text/css" href="dulock.css" media="screen" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+ <header id="header">
+    <nav class="menu">
+
+        <div class="logo-box">
+            <h1><a href="#">DULOCK</a></h1>
+        <span class="btn-menu"><i class="fas fa-bars"></i></span>
+        </div>
+
+        <div class="list-container">
+            <ul class="lists">
+                <li><a href= "dulock.html" class="activo">INICIO</a></li>
+                <li><a href= "mision.html">MISIÓN</a></li>
+                <li><a href= "productos.html">PRODUCTOS</a></li>
+                <li><a href= "galeria.html">GALERÍA</a></li>
+                <li><a href= "evaluanos.html">EVALÚANOS</a></li>
+                <li><a href= "contactos.html">CONTACTOS</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="img-header">
+        <div class="welcome">
+            <h1>DULOCK<hr></h1>
+            <h3 class="header3">ROPA</h3>
+        </div>
+
+    </div>
+
+ </header>
+
+
+
+      <div class="imagenes">
+
+          <form action="/action_page.php" method="post" class="formulario">
+
+              <h1 class="formulario__titulo">LOG IN</h1><hr><br>
+
+              <label class="formulario__label">Usuario:</label><br>
+              <input class="formulario__input" type="text" id="nom1">
+
+              <label class="formulario__label">Contraseña: </label><br>
+              <input class="formulario__input" type="password" id="nom">
+
+              
+              <div class="formulario__enviar" style="margin-bottom: 2rem;" onClick= "contraseña1()">Enviar</div>
+              
+            </form>
+        
+            <br><br><br>
+            </div>
+            
+
+      <br><br><br>
+      </div>
+
+ <div class="img-header">
+        <div class="welcome"></div>
+</div>
+
+ <!--VIDEO-->
+
+<div class="header2">
+    <h2>NUESTRO VIDEO</h2>
+    <iframe class="video" width="600" height="350" src="https://www.youtube.com/embed/EaTQixX8BPg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<br><br><br><br><br><br>
+
+<div class="img-header">
+        <div class="welcome"></div>
+</div>
+
+
+<div class="header2">
+    <h2>OBJETIVO</h2>
+    <p class="parrafo">Web app diseñada para la venta de ropa con un diseño sencillo, clásico y único. Tiene el propósito de hacer énfasis en que las personas deben aprender a amarse tal como son, demostrarles que somos privilegiados a la eleccion de nuestras prendas y hacer conciencia de la belleza en la sencillez.  </p>
+</div>
+
+
+
+
+    <SCRIPT LANGUAGE="JavaScript">var txt=" DULOCK ";var espera=140;var refresco=null;function rotulo_title() {document.title=txt;txt=txt.substring(1,txt.length)+txt.charAt(0);refresco=setTimeout("rotulo_title()",espera);}rotulo_title();</script>
+          
+
+
+
+
+</script></div><div class="n"><div class="n"> <a href="#" title="Ir arriba"><img alt="Ir arriba" border="0" src="imagenes/principal.jpg" style=position:fixed;bottom:0;right:0;/></a> </div>
+
+
+</body>
+</html>

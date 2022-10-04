@@ -1,0 +1,307 @@
+<html>
+<body>
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="productos.css" media="screen" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <header id="header">
+                <nav class="menu">
+
+                        <div class="logo-box">
+                            <h1><a href="#">DULOCK</a></h1>
+                        <span class="btn-menu"><i class="fas fa-bars"></i></span>
+                        </div>
+                
+                        <div class="list-container">
+                            <ul class="lists">
+                                <li><a href= "dulock.html" >INICIO</a></li>
+                                <li><a href= "mision.html">MISIÓN</a></li>
+                                <li><a href= "productos.html" class="activo">PRODUCTOS</a></li>
+                                <li><a href= "galeria.html">GALERÍA</a></li>
+                                <li><a href= "evaluanos.html">EVALÚANOS</a></li>
+                                <li><a href= "contactos.html">CONTACTOS</a></li>
+                            </ul>
+                
+                        </div>
+                
+                    </nav>
+
+                
+        <script>
+             window.onload = function () {
+            
+            var Productos = [
+                {
+                    id: 1,
+                    nombre: 'Chaqueta Negra con Botones Blancos',
+                    precio: 4000,
+                    imagen: 'imagenes/producto1.png'
+
+                },
+                {
+                    id: 2,
+                    nombre: 'Falda Blanca Larga',
+                    precio: 2500,
+                    imagen: 'imagenes/producto2.png'
+                },
+                {
+                    id: 3,
+                    nombre: 'Vestido Negro de Manga Larga',
+                    precio: 5000,
+                    imagen: 'imagenes/producto3.png'
+                },
+                {
+                    id: 4,
+                    nombre: 'Chaquetín Blanco',
+                    precio: 3500,
+                    imagen: 'imagenes/producto4.png'
+                },
+                {
+                    id: 5,
+                    nombre: 'Vestido Negro con Cinturón',
+                    precio: 2000,
+                    imagen: 'imagenes/producto5.png'
+
+                },
+                {
+                    id: 6,
+                    nombre: 'Saco Blanco',
+                    precio: 6000,
+                    imagen: 'imagenes/producto6.png'
+                },
+                {
+                    id: 7,
+                    nombre: 'Top Negro',
+                    precio: 1500,
+                    imagen: 'imagenes/producto7.png'
+                },
+                {
+                    id: 8,
+                    nombre: 'Vestido Blanco',
+                    precio: 5000,
+                    imagen: 'imagenes/producto8.png'
+                },
+                {
+                    id: 9,
+                    nombre: 'Saco Largo Negro',
+                    precio: 4500,
+                    imagen: 'imagenes/producto9.png'
+
+                },
+                {
+                    id: 10,
+                    nombre: 'Blusa Blanca con Tirantes Negros',
+                    precio: 2500,
+                    imagen: 'imagenes/producto10.png'
+                },
+                {
+                    id: 11,
+                    nombre: 'Pantalón con Botones',
+                    precio: 4000,
+                    imagen: 'imagenes/producto11.png'
+                }
+            ]
+
+            var prods = document.querySelector('#items');
+            var carrito = [];
+            var total = 0;
+            var din_carrito = document.querySelector('#carrito');
+            var $total = document.querySelector('#total');
+           
+            function convProds () {
+                for (var info of Productos) {
+                    
+                    var prods1 = document.createElement('div');
+                    prods1.classList.add('carrito1');
+                   
+                    var prods2 = document.createElement('div');
+                    
+                   
+                    var titProds = document.createElement('h5');
+                    titProds.textContent = info['nombre'];
+                    
+                    var imgProds = document.createElement('img');
+                    imgProds.classList.add('imagenes');
+                    imgProds.setAttribute('src', info['imagen']);
+                   
+                    var precioProds = document.createElement('p');
+                    precioProds.textContent =   '$' + info['precio'];
+                  
+                    var botonProds = document.createElement('button');
+                    botonProds.classList.add('botones');
+                    botonProds.textContent = 'Añadir al carrito';
+                    botonProds.setAttribute('marcador', info['id']);
+                    botonProds.addEventListener('click', añadirCarrito);
+                    
+                    prods2.appendChild(imgProds);
+                    prods2.appendChild(titProds);
+                    prods2.appendChild(precioProds);
+                    prods2.appendChild(botonProds);
+                    prods1.appendChild(prods2);
+                    prods.appendChild(prods1);
+                }
+            }
+
+            function añadirCarrito () {
+                
+                carrito.push(this.getAttribute('marcador'))
+                
+                calcularTotal();
+                
+                convCarrito();
+            }
+
+            function convCarrito () {
+                
+                din_carrito.textContent = '';
+                
+                var carrito2 = [...new Set(carrito)];
+                
+                carrito2.forEach(function (item, indice) {
+                    
+                    var prods3 = Productos.filter(function(datosProds) {
+                        return datosProds['id'] == item;
+                    });
+                    
+                    var cantidadProds = carrito.reduce(function (total,IdProds) {
+                        return IdProds === item ? total += 1 : total;
+                    }, 0);
+                    
+                    var añadirProds = document.createElement('li');
+                    añadirProds.textContent = `${prods3[0]['nombre']} - $${prods3[0]['precio']} - Cantidad: ${cantidadProds}`;
+                   
+                    var miBoton = document.createElement('button');
+                    miBoton.classList.add('botones');
+                    miBoton.textContent = 'Eliminar producto';
+                    miBoton.setAttribute('item', item);
+                    miBoton.addEventListener('click', borrarProducto);
+                   
+                    añadirProds.appendChild(miBoton);
+                    din_carrito.appendChild(añadirProds);
+                })
+            }
+
+            function borrarProducto () {
+                console.log()
+                
+                var borrar = this.getAttribute('item');
+                
+                carrito = carrito.filter(function (carritoId) {
+                    return carritoId !== borrar;
+                });
+
+                convCarrito();
+                
+                calcularTotal();
+            }
+
+            function calcularTotal () {
+                total1 = 0;
+                
+                for (var item of carrito) {
+                    
+                    var prods3 = Productos.filter(function(datosProds) {
+                        return datosProds['id'] == item;
+                    });
+                    total1= total1 + prods3[0]['precio'];
+                }
+                $total.textContent = total1;
+            }
+           
+            convProds();
+        } 
+
+
+
+        function descalumnos(){
+			
+			var t1= document.getElementById("total1").value;
+			
+            var caletra= (t1-(t1**.75));
+
+
+                document.getElementById("answerBox").innerHTML= "$ " + caletra.toFixed(2);
+            }
+
+
+            function desccfrecu(){
+			
+			var t1= document.getElementById("total1").value*1;
+
+            var caletra= (t1 - (t1**.60));
+
+
+                document.getElementById("answerBox").innerHTML= "$ " + caletra.toFixed(2);
+            }
+
+
+            function desccmayor(){
+			
+			var t2= document.getElementById("total1").value*1;
+
+            if(t2<10000){
+                var desc= (t2- (t2**1));
+                document.getElementById("answerBox").innerHTML= (" El precio no aplica para este descuento" );
+            }
+                
+            if(t2>10000){
+                var desc= (t2- (t2**.85));
+                document.getElementById("answerBox").innerHTML= "$ " + desc.toFixed(2);
+
+            }
+                
+                
+            }
+
+    
+        </script>
+
+     </header>
+ 
+
+<br>
+<br>
+
+<br><br><br><br><br><br>
+<div class="contenedor">
+    <div class="filas">
+        <br>
+        <br>
+
+        <aside class="carrito1">
+            <h2>Carrito de compras</h2><hr>
+           
+            <ul id="carrito"></ul></ul>
+            <hr> 
+            
+            <p>Total a pagar: $<span id="total"></span></p>
+            <br>
+            <br>
+                <h1>Descuentos</h1><hr>
+                <div class="data2">
+                    <div class="button" onClick="descalumnos()">Alumnos del Tec</div>
+                    <div class="button" onClick="desccfrecu()">Cliente frecuente</div>
+                    <div class="button" onClick="desccmayor()">Compra mayor a $10,000</div>
+                </div>
+<br><br><br>
+                <label>Ingresa aquí tu precio total y elige el tipo de descuento:</label><br>
+                <input id="total1" type="number" class="answers1"></input>
+<br><br><br>
+                <label>Precio con el descuento aplicado:</label>
+                <div class="answers" id="answerBox"> $ </div>
+                    
+        </aside>
+        <main id="items" class="carrito2 filas"></main>
+        
+        
+    </div>
+</div>
+
+
+</script></div><div class="n"><div class="n"> <a href="#" title="Ir arriba"><img alt="Ir arriba" border="0" src="imagenes/principal.jpg" style=position:fixed;bottom:0;right:0;/></a> </div>
+
+
+</body>
+</html>

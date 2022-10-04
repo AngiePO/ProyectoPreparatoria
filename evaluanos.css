@@ -1,0 +1,134 @@
+.body{
+    background:#272525;
+    font-family: 'Montserrat', sans-serif;
+
+ }
+
+ #header{
+    position: relative;
+    width: 100%;
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 87px;
+    background: rgb(37, 37, 37);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu .logo-box{
+    margin-left: 20px;
+}
+
+.menu .logo-box h1 a{
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+}
+
+.menu .list-container{
+    margin-right: 20px;
+}
+
+.menu .list-container .lists{
+    display: flex;
+}
+
+.menu .list-container .lists li{
+    list-style: none;
+}
+
+.menu .list-container .lists li a{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: white;
+    border-radius: 24px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu .list-container .lists li a.activo{
+    background: blue;
+    color: white;
+}
+
+.menu .list-container .lists li a:hover{
+    background: blue;
+    color: white;
+}
+.btn-menu > .fa-bars{
+    display: none;
+} 
+
+
+/*Encuesta*/
+
+
+
+form{
+	width:600px;
+	padding:25px;
+	border-radius:10px;
+	margin:auto;
+	background-color:rgb(121, 118, 118);
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+    text-align: center;
+}
+
+form input[type="number"]{
+    width:150px;
+    height: 30px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:10px 0;
+	
+}
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+
+
+
+.answers{
+    align: center;
+    width:430px;
+    height:100px;
+    background:#272525;
+    border:1px solid black;
+    margin-top:10px;
+    box-shadow: 5px 10px 8px rgb(20, 20, 20);
+    color:white;
+    font-size:25px;
+    text-align: center;
+}
+
+.boton{
+    width:100%;
+    height: 60px;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+    background-color:#000;
+    font-size: 30px;
+} 
+

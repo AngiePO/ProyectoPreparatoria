@@ -1,0 +1,131 @@
+<html>
+    <header>
+        <head>
+            <link rel="stylesheet" type="text/css" href="contactos.css" media="screen" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>contáctanos</title>
+ 
+
+
+        <header id="header">
+            <nav class="menu">
+
+                <div class="logo-box">
+                    <h1><a href="#">DULOCK</a></h1>
+                <span class="btn-menu"><i class="fas fa-bars"></i></span>
+                </div>
+        
+                <div class="list-container">
+                    <ul class="lists">
+                        <li><a href= "dulock.html" >INICIO</a></li>
+                        <li><a href= "mision.html">MISIÓN</a></li>
+                        <li><a href= "productos.html">PRODUCTOS</a></li>
+                        <li><a href= "galeria.html">GALERÍA</a></li>
+                        <li><a href= "evaluanos.html">EVALÚANOS</a></li>
+                        <li><a href= "contactos.html" class="activo">CONTACTOS</a></li>
+                    </ul>
+        
+                </div>
+        
+            </nav>
+         </header>   
+
+        <script>
+
+var nombre = [];
+
+function contactos1(){ 
+    var nombre1= document.getElementById("nom").value;
+    var nombre1= document.getElementById("nom2").value;
+    var nombre1= document.getElementById("nom3").value;
+    var nombre1= document.getElementById("nom4").value;
+
+    if (nombre1 == ""){
+
+        alert ("Debe llenar todos los campos")
+    }
+    else{
+        nombre.push(nombre1);
+    alert("Con mucho gusto le responderemos!");
+    document.getElementById("nom").value="";
+    }
+}
+
+
+
+    var inputs = document.getElementsByClassName('formulario__input');
+
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('keyup', function(){
+    if(this.value.length>=1) {
+      this.nextElementSibling.classList.add('fijar');
+    } else {
+      this.nextElementSibling.classList.remove('fijar');
+    }
+  });
+}
+
+</script>
+</head>
+    
+    <body class="body">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+ 
+
+<br><br><br>
+<br>
+
+
+<!---CONTACTOS-->
+
+<section class="contactos">
+    
+    <div class="contactos-box">
+
+        <div class="card-contactos">
+        <div class="card-img"><img src="imagenes/angela.jpg" alt="Angela Pontón" ></div>
+        <div class="contactos-text">
+            <h4>Angela Pontón</h4>
+            <p>Actualmente cursa el 4to semestre de Preparatoria en  Tec Garza Lagüera.</p>
+        </div>
+     </div>
+
+    <div class="card-contactos">
+            <div class="card-img"><img src="imagenes/cecilia.jpg" alt="Cecilia Rivas" ></div>
+            <div class="contactos-text">
+                <h4>Cecilia Rivas</h4>
+                <p>Actualmente cursa el 4to semestre de Preparatoria en  Tec Garza Lagüera.</p>
+            </div>
+        </div>
+</div>
+
+
+</section>
+
+
+<br><br> 
+<div class="imagenes">
+
+        <form action="" class="formulario">
+                <h1 class="formulario__titulo">Contáctenos</h1>
+                <input type="text" class="formulario__input" id="nom">
+                <label for="" class="formulario__label">Nombres</label>
+                <input type="text" class="formulario__input" id="nom2">
+                <label for="" class="formulario__label">Correo</label>
+                <input type="text" class="formulario__input" id="nom3">
+                <label for="" class="formulario__label">Teléfono</label>
+                <input type="text" class="formulario__input" id="nom4">
+                <label for="" class="formulario__label">Mensaje</label>
+                <input type="submit" class="formulario__submit" onclick="contactos1()">
+              </form>
+  
+<br><br><br>
+</div>
+
+
+
+</script></div><div class="n"><div class="n"> <a href="#" title="Ir arriba"><img alt="Ir arriba" border="0" src="imagenes/principal.jpg" style=position:fixed;bottom:0;right:0;/></a> </div>
+
+
+</body>
+</html>
